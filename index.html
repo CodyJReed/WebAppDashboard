@@ -311,16 +311,14 @@
 
           <!-- Search and message user(s) form  -->
           <form class="msg-frm" action="index.html" method="post">
-            <input class="srch-usr" type="text" name="user-name" list="userlist" placeholder="Search for User" autocomplete="on"><br>
-            <datalist id="userlist">
-              <option value="Dale Byrd">
-              <option value="Dan Oliver">
-              <option value="Dawn Wood">
-              <option value="Victoria Chambers">
-            </datalist>
+            <input  id="srch-usr" class="srch-usr" type="text" name="user-name" placeholder="Search for User" autocomplete="off"><br>
+            <ul id="autocomplete-results" class="srch-auto"></ul>
             <textarea class="msg-area" name="usr-msg" placeholder="Message for User" rows="5"></textarea><br>
             <input class="msg-submit" type="submit" name="send user message" value="SEND">
           </form>
+
+          <!-- Autocomplete list -->
+
           </div>
 
           <!-- User Settings -->

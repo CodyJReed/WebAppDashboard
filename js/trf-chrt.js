@@ -27,21 +27,28 @@ const userChart = new Chart(trfChart, {
               }
             ]
         },
-  options:{
-    responsive: true,
-    legend: {
-      display:false
-    },
-    scales: {
-      yAxes: [{
-        ticks: {
-          suggestedMin: 50,
-          suggestedMax: 2500
+        options: {
+          responsive: true,
+          legend: {
+            display: false
+          },
+          scales: {
+            yAxes: [{
+              position: 'left',
+              'id': 'y-axis-0',
+
+              gridLines: {
+                offsetGridLines: true
+              }
+            }],
+            xAxes: [{
+              gridLines: {
+                offsetGridLines: true
+              }
+            }]
+          }
         }
-      }]
-    }
-  }
-});
+      });
 
 // Bar Chart
 const dailyChart = new Chart(dlyChart, {

@@ -1,9 +1,14 @@
-// Alert Box and Notifications
+// Variables
 
 const icon = document.querySelector('.bell-lt');
 const bell = icon.parentNode;
 const alertList = document.querySelector('.alrt-list');
 const messageForm = document.querySelector('.msg-frm');
+const searchUser = document.getElementById('srch-usr');
+const results = document.getElementById('autocomplete-results');
+const users = ['Victoria Chambers', 'Dale Byrd', 'Dawn Wood', 'Dan Oliver'];
+let matches = [];
+let resultsCursor = 0;
 
 // Add (e)listener to Bell
 bell.addEventListener('click', () => {
@@ -55,3 +60,99 @@ messageForm.addEventListener('submit', (e) => {
   e.preventDefault();
   submitReset();
 });
+
+// Search User autocomplete
+searchUser.focus();
+
+// Prevent autocomplete selection from submitting Form
+searchUser.addEventListener('keydown', function (e) {
+  if(event.keyCode == '13') {
+    event.preventDefault();
+  }
+});
+
+searchUser.addEventListener('keyup', function (e)  {
+
+results.innerHTML = '';
+toggleResults('hide');
+
+if( this.value.length > 0 ) {
+   matches = getMatches( this.value );
+
+  if( matches.length > 0 ) {
+    displayMatches( matches );
+    }
+  }
+
+  if(results.classList.contains('visible')) {
+    switch( event.keyCode) {
+      case 13:
+        searchUser.value = results.children[resultsCursor].innerHTML;
+        toggleResults('hide');
+        resultsCursor = 0;
+        break;
+      case 38:
+        if (resultsCursor > 0) {
+          resultsCursor--;
+
+          moveCursor(resultsCursor);
+        }
+        break;
+      case 40:
+        if (resultsCursor < (matches.length - 1)) {
+          resultsCursor++;
+
+          moveCursor(resultsCursor);
+        }
+        break;
+    }
+  }
+
+});
+
+// Define a function for togglingthe results list
+function toggleResults(action) {
+  if( action == 'show') {
+    results.classList.add('visible');
+  }
+  else if( action == 'hide') {
+    results.classList.remove('visible');
+  }
+}
+
+// Define a function to check if input value matches any user names
+function getMatches(inputText) {
+  var matchList = [];
+
+  for( let i = 0; i < users.length; i++ ) {
+    if(users[i].toLowerCase().indexOf(inputText.toLowerCase() ) != -1 ) {
+      matchList.push( users[i] );
+    }
+
+  }
+
+  return matchList;
+}
+
+// Define a function for displaying autocomplete results
+function displayMatches(matchList) {
+  let j = 0;
+
+  while( j < matchList.length ) {
+    results.innerHTML += '<li class="results">' + matchList[j] + '</li>' ;
+    j++;
+  }
+  // The first child gets a class of 'highlighted'
+  moveCursor(resultsCursor);
+
+  // Show the results
+  toggleResults('show');
+}
+
+// Defines a function for moving the cursor in the results list
+function moveCursor(pos) {
+  for(let i = 0; i < results.children.length; i++) {
+    results.children[i].classList.remove('highlighted');
+  }
+  results.children[pos].classList.add('highlighted');
+}

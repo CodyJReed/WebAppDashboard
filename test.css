@@ -504,6 +504,26 @@ ul {
   max-width: 100%;
 }
 
+.srch-auto {
+  display: none;
+  font-size: 15px;
+  font-weight: 100;
+  color: #494554;
+  list-style: none;
+  text-transform: uppercase;
+  margin: 0 5% 1.5% 1%;
+  width: 90%;
+}
+
+.visible {
+  display: block;
+}
+
+.highlighted {
+  background-color: #d8d8da;
+  border: 1px solid #000;
+}
+
 .srch-usr,
 .msg-area,
 .input-text {
@@ -630,7 +650,7 @@ ul {
   border-radius: 8px;
   max-width: 100%;
   font-size: 15px;
-  margin-top: 6%;
+  margin-top: 6.5%;
   margin-left: 1%;
 }
 
