@@ -262,7 +262,7 @@ ul {
   list-style: none;
 }
 
-.tab-fltr:nth-of-type(3) {
+.selected {
   color: #fff;
   background-color: #7DBE6F;
   border-radius: 16px;
@@ -668,7 +668,7 @@ ul {
 .cancel {
   font-size: 15px;
   width: 48%;
-  padding: 3%;
+  padding: 2.5%;
   border-radius: 8px;
   font-weight: 100;
 }
@@ -753,8 +753,8 @@ ul {
   }
 
   .trf-chrt {
-    width: 70vh;
-    height: 37vh;
+    width: 85vh;
+    height: 46vh;
   }
 
   .dly-mbl {
@@ -805,8 +805,8 @@ ul {
 
 @media(min-width : 1020px){
   .trf-chrt {
-    width: 119vh;
-    height: 61vh;
+    width: 110vh;
+    height: 57vh;
   }
 
   .dly-style {
@@ -828,7 +828,7 @@ ul {
   }
 
   .hl-p {
-    padding-right: 15%;
+    padding-right: 16%;
   }
 
   .input-text {

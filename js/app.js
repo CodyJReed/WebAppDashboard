@@ -62,8 +62,6 @@ messageForm.addEventListener('submit', (e) => {
 });
 
 // Search User autocomplete
-searchUser.focus();
-
 // Prevent autocomplete selection from submitting Form
 searchUser.addEventListener('keydown', function (e) {
   if(event.keyCode == '13') {
