@@ -154,3 +154,33 @@ function moveCursor(pos) {
   }
   results.children[pos].classList.add('highlighted');
 }
+
+// Save settings to localStorage
+
+if (window.localStorage) {
+  let email = document.getElementById('email-checkbox');
+  let profile = document.getElementById('profile-checkbox');
+  let timezone = document.getElementById('timezone');
+
+  const save = document.getElementById('save');
+  const cancel = document.getElementById('cancel');
+
+  // Get localStorage values
+
+  email.checked = localStorage.getItem(email.value) === 'true' ? true:false;
+  profile.checked = localStorage.getItem(profile.value) === 'true' ? true:false;
+  timezone.value = localStorage.getItem('timezone');
+
+
+  // Define Event for saving settings to localStorage
+
+  save.addEventListener('click', function (e) {
+    event.preventDefault();
+    localStorage.setItem(email.value , email.checked);
+    localStorage.setItem(profile.value, profile.checked);
+    localStorage.setItem('timezone', timezone.value);
+
+    // Alert User of saved Changes
+    window.alert("Your changes have been saved");
+  });
+}
