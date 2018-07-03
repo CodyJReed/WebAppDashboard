@@ -279,7 +279,7 @@ ul {
 .trf-chrt {
   position: relative;
   height: 23vh;
-  width: 47vh;
+  width: 38vh;
 }
 
 /* Daily and Mobile Chart Style */
@@ -307,13 +307,13 @@ ul {
 .dly-style{
   position: relative;
   height: 23vh;
-  width: 47vh;
+  width: 38vh;
 }
 
 .mbl-style{
   position: relative;
   height: 20vh;
-  width: 47vh;
+  width: 38vh;
 }
 
 /* Mobile Legend */
@@ -321,7 +321,7 @@ ul {
   font-size: 12px;
   position: relative;
   left: 80%;
-  bottom: 100px;
+  bottom: 140px;
 }
 
 .phone:before,
@@ -689,8 +689,8 @@ ul {
 
 @media(min-width : 500px) {
   .trf-chrt {
-    width: 65vh;
-    height: 34vh;
+    width: 50vh;
+    height: 28vh;
   }
 
   .dly-style {
@@ -753,8 +753,8 @@ ul {
   }
 
   .trf-chrt {
-    width: 85vh;
-    height: 46vh;
+    width: 72vh;
+    height: 40vh;
   }
 
   .dly-mbl {
@@ -805,17 +805,17 @@ ul {
 
 @media(min-width : 1020px){
   .trf-chrt {
-    width: 100vh;
+    width: 95vh;
     height: 57vh;
   }
 
   .dly-style {
-    width: 50vh;
+    width: 47vh;
     height: 23vh;
   }
 
   .mbl-style {
-    width: 50vh;
+    width: 47vh;
     height: 23vh;
   }
   .legend {
