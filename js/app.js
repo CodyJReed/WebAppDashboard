@@ -108,7 +108,15 @@ if( this.value.length > 0 ) {
 
 });
 
-// Define a function for togglingthe results list
+// Add Click event to select User name from search results list
+results.addEventListener('click', function (e) {
+  searchUser.value = e.target.textContent;
+  toggleResults('hide');
+});
+
+
+
+// Define a function for toggling the results list
 function toggleResults(action) {
   if( action == 'show') {
     results.classList.add('visible');
